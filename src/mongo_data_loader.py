@@ -40,8 +40,6 @@ class MongoDataLoader():
         for commerce in self.gen.commerce_list:
             self.commerces_col.insert(commerce)
 
-
 if __name__ == "__main__":
-
     loader = MongoDataLoader()
     loader.go(NUMBER_OF_CLIENTS, NUMBER_OF_COMMERCES, NUMBER_OF_TRANSACTIONS)

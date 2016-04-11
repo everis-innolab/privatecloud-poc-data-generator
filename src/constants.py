@@ -7,9 +7,13 @@ MONGO_CLIENT_COLLECTION = "clients"
 MONGO_TRANSACTION_COLLECTION = "transactions"
 MONGO_COMMERCE_COLLECTION = "commerces"
 
+COMMERCE_CSV="commerces.csv"
+CLIENTS_CSV="clients.csv"
+TRANSACTION_CSV="transactions.csv"
+
 NUMBER_OF_CLIENTS = 5000
 NUMBER_OF_COMMERCES = 1000
-NUMBER_OF_TRANSACTIONS = 50000
+NUMBER_OF_TRANSACTIONS = 10000
 
 south_america_and_spain = [
     ("Argentina","AR"),
