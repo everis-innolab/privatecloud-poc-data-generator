@@ -85,7 +85,8 @@ class DataGenerator():
             "country":country_object.alpha2,
             "contry_name":country_object.name,
             "birth_day":faker.date_time_between(start_date="-30y", end_date="-18y"),
-            "address":faker.street_address(),
+            #La address a veces tiene \n
+            "address":faker.street_address().replace("\n",""),
             "name": faker.first_name(),
             "last_name": faker.last_name()
         }
@@ -143,6 +144,8 @@ class DataGenerator():
             "commerce_contry_name":commerce["contry_name"],
             "commerce_id":commerce["_id"],
             "client_id":client["_id"],
+            "client_name":client["name"],
+            "client_last_name":client["last_name"],
             "client_credit_card":client["credit_card"],
             "client_country":client["country"],
             "client_country_name":client["contry_name"],
