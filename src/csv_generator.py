@@ -50,11 +50,11 @@ class CSVGenerator():
 
     def __clean_and_fill_csv(self, file_path, headers, data_list):
         myfile = open(file_path, 'wb')
-        wr = unicodecsv.writer(myfile, quoting=csv.QUOTE_ALL)
+        wr = unicodecsv.writer(myfile, quoting=csv.QUOTE_NONE, delimiter = '\t')
         wr.writerow(headers)
 
         myfile = open(file_path, 'ab')
-        wr = unicodecsv.writer(myfile, quoting=csv.QUOTE_ALL)
+        wr = unicodecsv.writer(myfile, quoting=csv.QUOTE_NONE, delimiter = '\t')
         wr.writerows(data_list)
 
 ##=============================================================================

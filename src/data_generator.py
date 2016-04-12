@@ -85,10 +85,12 @@ class DataGenerator():
             "country":country_object.alpha2,
             "contry_name":country_object.name,
             "birth_day":faker.date_time_between(start_date="-30y", end_date="-18y"),
-            #La address a veces tiene \n
+            #Address a veces tiene \n
             "address":faker.street_address().replace("\n",""),
-            "name": faker.first_name(),
-            "last_name": faker.last_name()
+
+            #Name y Last Name en algunas ocasiones tienen \t
+            "name": faker.first_name().replace("\t",""),
+            "last_name": faker.last_name().replace("\t","")
         }
 
         return data
