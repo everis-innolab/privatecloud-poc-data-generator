@@ -160,13 +160,6 @@ class DataGenerator():
 ## ATOMIC FIELDS+
 ##=============================================================================
     def get_random_country_object(self):
-        """
-        >>> germany.alpha2
-        >>> germany.alpha3
-        >>> germany.numeric
-        >>> germany.name
-        >>> germany.official_name
-        """
         country_code = self.normal_distribution_choice(countries)[1]
         return pycountry.countries.get(alpha2=country_code)
 
@@ -196,8 +189,8 @@ class DataGenerator():
 
     def normal_distribution_choice(self, list, mean=None, stddev=None):
         """
-        Devuelve un elemento aleatorio de la lista, pero siguiendo una
-        distribución normal gausiana.
+        Returns a random element from the lista, but following a normal
+        gaussian distribution.
 
         http://stackoverflow.com/questions/35472461/select-one-element-from-a-list-using-python-following-the-normal-distribution
         :param list:
@@ -240,20 +233,3 @@ class DataGenerator():
 
             if 0 <= hour < 24:
                 return int(hour)
-
-
-
-if __name__ == "__main__":
-    gen = DataGenerator()
-
-    hours = [0] *24
-    for i in range (10000):
-        hour=gen.get_normal_distribution_hour_of_day()
-        hours[hour]+=1
-
-    print hours
-
-
-
-
-
